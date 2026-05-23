@@ -13,6 +13,7 @@ import { FinalCtaSection } from "@/components/final-cta-section"
 import { ContactForm } from "@/components/contact-form"
 import { Footer } from "@/components/footer"
 import { FixedFooterCta } from "@/components/fixed-footer-cta"
+import { MathRoadmapSection } from "@/components/math-roadmap-section"
 
 export default function Home() {
   return (
@@ -27,6 +28,8 @@ export default function Home() {
         <VictoryEquationSection />
         {/* 4. 習慣化 */}
         <HabitSection />
+        <MathRoadmapSection />
+
         {/* 5. 地域データ */}
         <RegionalDataSection />
         {/* 6. 解決策 */}
