@@ -4,9 +4,13 @@ import Image from "next/image"
 
 export function MathRoadmapSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-blue-50 py-20">
+   <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white py-20">
       
       {/* 背景エフェクト */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-400/20 rounded-full blur-3xl"></div>
+
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl"></div>
+      
       <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-200/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-300/20 rounded-full blur-3xl"></div>
 
@@ -18,15 +22,16 @@ export function MathRoadmapSection() {
             先取り学習ロードマップ
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-900">
-            小学生から始める、
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight text-white">
+            小学生時代の「勉強の貯金」が、
+
             <br />
             <span className="text-red-500">
-              数学強者へのロードマップ
+              将来の選択肢を広げます
             </span>
           </h2>
 
-          <p className="mt-6 text-gray-600 text-lg leading-relaxed">
+          <p className="mt-6 text-white text-lg leading-relaxed">
             理解した子から、学年を超えてどんどん進む。
             <br />
             高校数学を早く終えることで、
@@ -42,21 +47,21 @@ export function MathRoadmapSection() {
 
             <div className="bg-white rounded-3xl shadow-lg p-8 border border-blue-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                M君は現在小学4年生
+                医学部を目指すM君の場合
               </h3>
 
               <p className="text-gray-700 leading-relaxed mb-4">
-                小4算数を約4～5か月で終了予定です。
+                 M君は特別な天才ではありません。
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                理解した単元から先へ進むことで、
-                学年にとらわれず、
-                中学・高校内容へ進
-                んでいきます。
+                 ですが、小4から先取りを始め、
+            「理解した単元からどんどん進める」
+            という学習を継続しています。
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                学校の授業で、復習→定着。
+                小学生のうちに積み重ねた学習量が、
+            中学・高校で大きな差になります。
               </p>
 
             </div>
@@ -107,7 +112,7 @@ export function MathRoadmapSection() {
 
             <div className="relative">
               <Image
-                src="/images/math-warrior.png"
+                src="/images/math-hero-roadmap.png"
                 alt="数学強者"
                 width={500}
                 height={500}
@@ -131,46 +136,127 @@ export function MathRoadmapSection() {
 
         </div>
 
-        {/* タイムライン */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-blue-100">
+{/* カリキュラム */}
+<div className="mt-20">
+  <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">
+    数学カリキュラム例
+  </h3>
 
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900">
-            数学カリキュラム例
-          </h3>
+  <div className="grid md:grid-cols-3 gap-8">
 
-          <div className="space-y-5">
+    {/* 小学生 */}
+    <div className="rounded-3xl p-8 bg-gradient-to-br from-blue-500 to-cyan-400 text-white shadow-2xl hover:scale-105 transition duration-300">
+      <div className="text-center mb-6">
+        <p className="text-sm tracking-widest opacity-80">
+          ELEMENTARY
+        </p>
 
-            {[
-              ["小学4年", "小5算数終了予定"],
-              ["小学5年", "小学算数終了予定"],
-              ["小学6年", "中1数学終了予定"],
-              ["中学1年", "中2数学終了予定"],
-              ["中学2年", "中学数学終了予定"],
-              ["中学3年", "数Ⅰ・A終了予定"],
-              ["高校1年", "数Ⅱ・B"],
-              ["高校2年", "数Ⅲ・C終了予定"],
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col md:flex-row md:items-center gap-4 bg-blue-50 rounded-2xl p-5 hover:scale-[1.01] transition"
-              >
-                <div className="md:w-48 font-bold text-blue-700 text-lg">
-                  {item[0]}
-                </div>
+        <h4 className="text-3xl font-bold mt-2">
+          小学生
+        </h4>
+      </div>
 
-                <div className="hidden md:block text-2xl text-red-400">
-                  →
-                </div>
-
-                <div className="font-semibold text-gray-800 text-lg">
-                  {item[1]}
-                </div>
-              </div>
-            ))}
-
-          </div>
-
+      <div className="space-y-4">
+        <div className="bg-white/20 rounded-2xl p-4">
+          <p className="font-bold text-xl">小4</p>
+          <p className="text-sm mt-1">
+            小5算数終了予定
+          </p>
         </div>
+
+        <div className="bg-white/20 rounded-2xl p-4">
+          <p className="font-bold text-xl">小5</p>
+          <p className="text-sm mt-1">
+            小学校算数終了予定
+          </p>
+        </div>
+
+        <div className="bg-white/20 rounded-2xl p-4">
+          <p className="font-bold text-xl">小6</p>
+          <p className="text-sm mt-1">
+            中1数学終了予定
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* 中学生 */}
+    <div className="rounded-3xl p-8 bg-gradient-to-br from-green-500 to-emerald-400 text-white shadow-2xl hover:scale-105 transition duration-300">
+      <div className="text-center mb-6">
+        <p className="text-sm tracking-widest opacity-80">
+          JUNIOR HIGH
+        </p>
+
+        <h4 className="text-3xl font-bold mt-2">
+          中学生
+        </h4>
+      </div>
+
+      <div className="space-y-4">
+        <div className="bg-white/20 rounded-2xl p-4">
+          <p className="font-bold text-xl">中1</p>
+          <p className="text-sm mt-1">
+            中2数学終了予定
+          </p>
+        </div>
+
+        <div className="bg-white/20 rounded-2xl p-4">
+          <p className="font-bold text-xl">中2</p>
+          <p className="text-sm mt-1">
+            中学数学終了予定
+          </p>
+        </div>
+
+        <div className="bg-white/20 rounded-2xl p-4">
+          <p className="font-bold text-xl">中3</p>
+          <p className="text-sm mt-1">
+            数ⅠA終了予定
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* 高校生 */}
+    <div className="rounded-3xl p-8 bg-gradient-to-br from-purple-600 to-pink-500 text-white shadow-2xl hover:scale-105 transition duration-300">
+      <div className="text-center mb-6">
+        <p className="text-sm tracking-widest opacity-80">
+          HIGH SCHOOL
+        </p>
+
+        <h4 className="text-3xl font-bold mt-2">
+          高校生
+        </h4>
+      </div>
+
+      <div className="space-y-4">
+        <div className="bg-white/20 rounded-2xl p-4">
+          <p className="font-bold text-xl">高1</p>
+          <p className="text-sm mt-1">
+            数ⅡB終了予定
+          </p>
+        </div>
+
+        <div className="bg-white/20 rounded-2xl p-4">
+          <p className="font-bold text-xl">高2</p>
+          <p className="text-sm mt-1">
+            数ⅢC終了予定
+          </p>
+        </div>
+
+        <div className="bg-yellow-300 text-black rounded-2xl p-5 mt-6 text-center">
+          <p className="font-bold text-2xl">
+            高3を
+          </p>
+
+          <p className="font-bold text-2xl">
+            受験演習へ
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
         {/* 下部メッセージ */}
         <div className="mt-14 bg-gradient-to-r from-red-500 to-blue-600 text-white rounded-3xl p-10 text-center shadow-2xl">
