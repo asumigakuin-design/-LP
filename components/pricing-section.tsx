@@ -98,7 +98,11 @@ export function PricingSection() {
           {/* Note */}
           <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 text-center">
             <p className="text-slate-700 font-medium">
-              週2コマとの差はわずか1万円。<span className="text-primary font-bold">毎日通えるのが一番お得</span>です。
+              一般的な個別指導塾の月謝で、
+<span className="text-primary font-bold">
+  毎日通える通い放題。
+</span>
+学習習慣を定着させ、圧倒的な演習量を確保できます。
             </p>
           </div>
         </div>

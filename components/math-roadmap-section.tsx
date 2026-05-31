@@ -1,9 +1,12 @@
 "use client"
 
 import Image from "next/image"
+import { useState } from "react"
 
 export function MathRoadmapSection() {
+  const [modal, setModal] = useState<string | null>(null)
   return (
+  <>
    <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white py-20">
       
       {/* 背景エフェクト */}
@@ -145,7 +148,9 @@ export function MathRoadmapSection() {
   <div className="grid md:grid-cols-3 gap-8">
 
     {/* 小学生 */}
-    <div className="rounded-3xl p-8 bg-gradient-to-br from-blue-500 to-cyan-400 text-white shadow-2xl hover:scale-105 transition duration-300">
+    <div 
+      onClick={() => setModal("elementary")}
+      className="rounded-3xl p-8 bg-gradient-to-br from-blue-500 to-cyan-400 text-white shadow-2xl hover:scale-105 transition duration-300">
       <div className="text-center mb-6">
         <p className="text-sm tracking-widest opacity-80">
           ELEMENTARY
@@ -154,6 +159,9 @@ export function MathRoadmapSection() {
         <h4 className="text-3xl font-bold mt-2">
           小学生
         </h4>
+<p className="text-center text-sm font-bold mt-3 text-white animate-pulse">
+  ▼ クリックで詳細を見る
+</p>
       </div>
 
       <div className="space-y-4">
@@ -178,10 +186,13 @@ export function MathRoadmapSection() {
           </p>
         </div>
       </div>
+
     </div>
 
     {/* 中学生 */}
-    <div className="rounded-3xl p-8 bg-gradient-to-br from-green-500 to-emerald-400 text-white shadow-2xl hover:scale-105 transition duration-300">
+    <div 
+      onClick={() => setModal("junior")}
+      className="rounded-3xl p-8 bg-gradient-to-br from-green-500 to-emerald-400 text-white shadow-2xl hover:scale-105 transition duration-300">
       <div className="text-center mb-6">
         <p className="text-sm tracking-widest opacity-80">
           JUNIOR HIGH
@@ -190,6 +201,9 @@ export function MathRoadmapSection() {
         <h4 className="text-3xl font-bold mt-2">
           中学生
         </h4>
+<p className="text-center text-sm font-bold mt-3 text-white animate-pulse">
+  ▼ クリックで詳細を見る
+</p>
       </div>
 
       <div className="space-y-4">
@@ -214,10 +228,13 @@ export function MathRoadmapSection() {
           </p>
         </div>
       </div>
+
     </div>
 
     {/* 高校生 */}
-    <div className="rounded-3xl p-8 bg-gradient-to-br from-purple-600 to-pink-500 text-white shadow-2xl hover:scale-105 transition duration-300">
+    <div 
+      onClick={() => setModal("high")}
+      className="rounded-3xl p-8 bg-gradient-to-br from-purple-600 to-pink-500 text-white shadow-2xl hover:scale-105 transition duration-300">
       <div className="text-center mb-6">
         <p className="text-sm tracking-widest opacity-80">
           HIGH SCHOOL
@@ -226,6 +243,9 @@ export function MathRoadmapSection() {
         <h4 className="text-3xl font-bold mt-2">
           高校生
         </h4>
+<p className="text-center text-sm font-bold mt-3 text-white animate-pulse">
+  ▼ クリックで詳細を見る
+</p>
       </div>
 
       <div className="space-y-4">
@@ -256,6 +276,7 @@ export function MathRoadmapSection() {
     </div>
 
   </div>
+
 </div>
 
         {/* 下部メッセージ */}
@@ -276,5 +297,101 @@ export function MathRoadmapSection() {
 
       </div>
     </section>
-  )
+ {modal && (
+  <div
+    className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+    onClick={() => setModal(null)}
+  >
+    <div
+      className="bg-slate-900 text-white rounded-3xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        className="float-right text-2xl"
+        onClick={() => setModal(null)}
+      >
+        ×
+      </button>
+
+      {modal === "elementary" && (
+        <>
+          <h3 className="text-3xl font-bold mb-6 text-cyan-400">
+            小学生
+          </h3>
+
+          <p className="font-bold mb-4">
+            当たり前の基準を上げる
+          </p>
+
+          <ul className="space-y-3 mb-6">
+            <li>✓ ミスゼロの計算力</li>
+            <li>✓ 120分集中できる勉強体力</li>
+            <li>✓ 15分考え抜く粘り強さ</li>
+          </ul>
+
+          <hr className="my-6 border-slate-700" />
+
+          <p>
+            「解ける」ではなく
+            「呼吸するように正解する」
+            レベル（無意識的有能）
+            を目指します。
+          </p>
+        </>
+      )}
+
+      {modal === "junior" && (
+        <>
+          <h3 className="text-3xl font-bold mb-6 text-green-400">
+            中学時代
+          </h3>
+
+          <p className="font-bold mb-4">
+            トップ校合格と先取戦略のバランス
+          </p>
+
+          <ul className="space-y-3 mb-6">
+            <li>✓ 学習習慣の確立（長時間勉強開始）</li>
+            <li>✓ 中学範囲を完璧に仕上げる</li>
+            <li>✓ 高校の範囲の導入は必須</li>
+          </ul>
+
+          <hr className="my-6 border-slate-700" />
+
+          <p>
+            中学範囲と高校範囲の両立が鍵
+          </p>
+        </>
+      )}
+
+      {modal === "high" && (
+        <>
+          <h3 className="text-3xl font-bold mb-6 text-purple-400">
+            高校時代
+          </h3>
+
+          <p className="font-bold mb-4">
+            勉強を楽しむ心の余裕が必要
+          </p>
+
+          <ul className="space-y-3 mb-6">
+            <li>✓ 学習習慣の確立（隙間時間まで勉強）</li>
+            <li>✓ 高1・高2が最大の勝負</li>
+            <li>✓ 受け身ではなく攻めの勉強が確立</li>
+          </ul>
+
+          <hr className="my-6 border-slate-700" />
+
+          <p>
+            受験時は、圧倒的な力で
+            ねじ伏せるくらいの自信がつく、
+            勉強量をこなします。
+          </p>
+        </>
+      )}
+    </div>
+  </div>
+)}
+</>
+)
 }

@@ -1,11 +1,12 @@
 export function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden bg-white">
-      <img
-        src="/images/hero-final.png"
-        alt="あすみ学院 英語強者LP"
-        className="w-full h-auto block"
-      />
+<div
+  className="w-full aspect-[16/9] bg-contain bg-top bg-no-repeat"
+  style={{
+    backgroundImage: "url('/images/hero.png')",
+  }}
+/>
     </section>
   )
 }
