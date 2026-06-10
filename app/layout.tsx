@@ -10,11 +10,20 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 // <CHANGE> Updated metadata for Asumi Gakuin landing page
 export const metadata: Metadata = {
   title: "あすみ学院",
-  description: "千葉市緑区・土気・あすみが丘の個別指導塾『あすみ学院』。小学生・中学生・高校生対応。自立学習×個別フォローで成績アップ。無料体験受付中。",
-  generator: "v0.app",
+
+  applicationName: "あすみ学院",
+
+  description:
+    "千葉市緑区・土気・あすみが丘の個別指導塾",
+
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
+
+  openGraph: {
+    title: "あすみ学院",
+    siteName: "あすみ学院",
   },
 }
 
