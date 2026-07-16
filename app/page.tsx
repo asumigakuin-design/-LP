@@ -13,8 +13,10 @@ import { FinalCtaSection } from "@/components/final-cta-section"
 import { ContactForm } from "@/components/contact-form"
 import { Footer } from "@/components/footer"
 import { FixedFooterCta } from "@/components/fixed-footer-cta"
-import MedicalRoadmapSection from "@/components/medical-roadmap-section"
+
 import { MathRoadmapSection } from "@/components/math-roadmap-section"
+import { SummerSection } from "@/components/summer-section"
+
 
 export default function Home() {
   return (
@@ -39,6 +41,7 @@ export default function Home() {
         <SuccessStories />
         {/* 8. 学習環境 */}
         <EnvironmentGallery />
+        <SummerSection />
         {/* 9. 締めCTA */}
         <FinalCtaSection />
         {/* 10. 料金・時間割（下部にまとめて配置） */}
